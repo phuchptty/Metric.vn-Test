@@ -1,0 +1,19 @@
+<template>
+    <div class="flex lg:justify-between justify-start items-start my-2">
+        <div class="text-lg font-medium pb-1 mb-4">Lịch sử giá</div>
+
+        <ReciveDiscountBtn />
+    </div>
+
+    <div class="flex flex-col lg:flex-row">
+        <LeftCol />
+        <RightCol />
+    </div>
+</template>
+
+<script setup lang="ts">
+import LeftCol from '~/views/itemView/priceHistory/leftCol.vue';
+import RightCol from '~/views/itemView/priceHistory/rightCol.vue';
+</script>
+
+<style scoped></style>

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* container-v2 */
+.container-v2 {
+    @apply container;
+}
+
+@media screen(sm) {
+    .container-v2 {
+        margin-left: 32px;
+        margin-right: 32px;
+        width: calc(100% - 64px) !important
+    }
+}
+
+@media screen(md) {
+    .container-v2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 840px !important
+    }
+}
+
+@media screen(lg) {
+    .container-v2 {
+        margin-left: 200px;
+        margin-right: 200px;
+        width: calc(100% - 400px) !important
+    }
+}
+
+@media screen(xl) {
+    .container-v2 {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1040px !important
+    }
+}
+
+@media screen('2xl') {
+    .container-v2 {
+        width: 1200px !important;
+    }
+}
