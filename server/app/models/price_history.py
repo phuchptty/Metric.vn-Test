@@ -10,5 +10,5 @@ class PriceHistory(Base):
     item_id = Column(Integer, ForeignKey('items.id'))
     price = Column(Double)
 
-    createdAt = Column(TIMESTAMP(timezone=True),
+    created_at = Column(TIMESTAMP(timezone=True),
                        nullable=False, server_default=func.now())
