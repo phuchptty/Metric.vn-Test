@@ -4,18 +4,21 @@
             <div class="text-lg font-medium pb-1 mb-4">Sản phẩm liên quan</div>
 
             <div>
-                <swiper :modules="[SwiperNavigation]" :slides-per-view="4" :space-between="12" navigation>
-                    <swiper-slide>
+                <swiper
+                    :modules="[SwiperNavigation]"
+                    :slides-per-view="4"
+                    :space-between="12"
+                    :navigation="{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    }"
+                >
+                    <swiper-slide v-for="i in 10" :key="i">
                         <ItemRelatedCard />
                     </swiper-slide>
 
-                    <swiper-slide>
-                        <ItemRelatedCard />
-                    </swiper-slide>
-
-                    <swiper-slide>
-                        <ItemRelatedCard />
-                    </swiper-slide>
+                    <div class="swiper-button-prev swiper-button-arr"></div>
+                    <div class="swiper-button-next swiper-button-arr"></div>
                 </swiper>
             </div>
         </div>

@@ -3,6 +3,11 @@ import svgLoader from 'vite-svg-loader';
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
+    app: {
+        head: {
+            title: 'Metrics',
+        },
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxtjs/eslint-module',
@@ -14,7 +19,7 @@ export default defineNuxtConfig({
     vite: {
         plugins: [svgLoader()],
     },
-    css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+    css: ['@fortawesome/fontawesome-svg-core/styles.css', '@/assets/css/swiper.scss'],
     antd: {
         icons: false,
     },

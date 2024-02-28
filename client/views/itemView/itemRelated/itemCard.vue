@@ -1,6 +1,6 @@
 <template>
     <client-only>
-        <div class="flex flex-col overflow-hidden rounded-sm shadow-md hover:shadow-xl cursor-pointer">
+        <div class="flex flex-col overflow-hidden rounded-sm shadow hover:shadow-md cursor-pointer mb-1">
             <div class="h-full relative overflow-hidden">
                 <img alt="" class="h-full w-full object-cover" src="https://cf.shopee.vn/file/be82e16ddc37dcf2657d02a30171a050_tn" />
             </div>
