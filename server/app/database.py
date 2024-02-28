@@ -1,4 +1,5 @@
 import os
+from contextlib import contextmanager
 
 from sqlalchemy import create_engine, URL
 from sqlalchemy.orm import sessionmaker
@@ -22,6 +23,7 @@ Session = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
 
+@contextmanager
 def get_db():
     db = Session()
     try:
