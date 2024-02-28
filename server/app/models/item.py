@@ -29,6 +29,7 @@ class Item(Base):
     price_before_discount = Column(Float, default=0)
 
     provider = Column(String, nullable=False)
+    provider_url = Column(String, nullable=False)
 
     created_at = Column(TIMESTAMP(timezone=True),
                         nullable=False, server_default=func.now())

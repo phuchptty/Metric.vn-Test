@@ -12,11 +12,11 @@ class Category(Base):
     slug = Column(String, index=True)
 
     level = Column(Integer, default=0)
-    parent_id = Column(Integer, ForeignKey("categories.id"), default=0)
+    parent_id = Column(Integer, ForeignKey("categories.id"), nullable=True)
 
-    parent = relationship("Category", remote_side=[id], backref="children")
+    children = relationship("Category", foreign_keys=[parent_id], lazy="joined")
 
     created_at = Column(TIMESTAMP(timezone=True),
-                       nullable=False, server_default=func.now())
+                        nullable=False, server_default=func.now())
     updated_at = Column(TIMESTAMP(timezone=True),
-                       default=None, onupdate=func.now())
+                        default=None, onupdate=func.now())

@@ -1,10 +1,12 @@
+from sqlalchemy.orm import joinedload
+
 from app import models
 from app.database import get_db
 
 
 def get_category_by_id(category_id: int):
     with get_db() as db:
-        result = db.query(models.Category).filter(models.Category.id == category_id).first()
+        result = db.query(models.Category).where(models.Category.id == category_id).first()
         return result
 
 
@@ -19,3 +21,11 @@ def recursive_parent_category(category_id: int):
         else:
             category_id = 0
     return parent_categories
+
+
+def get_all_category():
+    with get_db() as db:
+        result = db.query(models.Category).where(models.Category.parent_id == None).options(
+            joinedload(models.Category.children)).all()
+
+        return result

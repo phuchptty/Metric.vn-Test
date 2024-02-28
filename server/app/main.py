@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import engine
-from .models import Base
-from .routes import item
+from .models.price_history import Base
+from .routes import item, category
 
 Base.metadata.create_all(bind=engine)
 
@@ -17,6 +17,7 @@ app.add_middleware(
 )
 
 app.include_router(item.router, tags=['Item'], prefix='/v1/item')
+app.include_router(category.router, tags=['Category'], prefix='/v1/category')
 
 
 @app.get("/")
