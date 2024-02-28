@@ -1,5 +1,5 @@
 <template>
-    <div class="flex lg:justify-between justify-start items-start my-2">
+    <div id="priceHistory" class="flex lg:justify-between justify-start items-start my-2">
         <div class="text-lg font-medium pb-1 mb-4">Lịch sử giá</div>
 
         <ReciveDiscountBtn />

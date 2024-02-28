@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap space-x-4 items-center">
-        <a class="bg-primary-500 w-full px-3 md:px-6 py-3 text-sm rounded text-white" href="#">
+        <a class="bg-primary-500 w-full px-3 md:px-6 py-3 text-sm rounded text-white" :href="link" target="_blank">
             <p class="btn inline-flex text-center whitespace-nowrap">
                 Đến nơi bán
                 <LongRightArrow class="ml-1 h-5" />
@@ -11,6 +11,10 @@
 
 <script setup lang="ts">
 import LongRightArrow from 'assets/icons/longRightArrow.svg';
+
+defineProps<{
+    link: string;
+}>();
 </script>
 
 <style scoped>

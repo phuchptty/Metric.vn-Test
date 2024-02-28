@@ -2,11 +2,11 @@
     <div class="container-v2 mt-4">
         <div class="w-full flex items-center lg:items-start flex-col lg:flex-row mb-4 lg:mb-6 px-2 sm:px-0">
             <div class="w-full lg:w-1/2 flex-shrink-0 mr-4 lg:p-6 lg:border rounded-xl leftCol">
-                <SlideShow />
+                <SlideShow :images="itemDetailData.images" />
             </div>
 
             <div class="flex-grow mx-6 lg:mx-auto w-full lg:w-1/2">
-                <ItemInfo />
+                <ItemInfo :item-detail-data="itemDetailData" />
             </div>
         </div>
 
@@ -14,9 +14,9 @@
 
         <PriceComparison />
 
-        <PriceHistory />
+        <!--        <PriceHistory />-->
 
-        <ItemDescription />
+        <ItemDescription :description="itemDetailData.description" />
 
         <ItemComments />
 
@@ -45,10 +45,15 @@ import ItemRecommended from '~/views/itemView/itemRecommended/itemRecommended.vu
 import BlogInItemView from '~/views/itemView/blog/blog.vue';
 import ItemSuggest from '~/views/itemView/itemSuggest/itemSuggest.vue';
 import MetricFrame from '~/views/itemView/metric/metricFrame.vue';
+import type { ItemDetail } from '~/types';
 
 defineComponent({
     name: 'ItemView',
 });
+
+defineProps<{
+    itemDetailData: ItemDetail;
+}>();
 </script>
 
 <style scoped>

@@ -17,30 +17,9 @@
 </template>
 
 <script setup lang="ts">
-const images = [
-    'https://cf.shopee.vn/file/be82e16ddc37dcf2657d02a30171a050_tn',
-    'https://cf.shopee.vn/file/2d7d1d30596c7d6527b403f9e3a40518_tn',
-    'https://cf.shopee.vn/file/38625d8696c075b0266676b87dc910dd_tn',
-    'https://cf.shopee.vn/file/2c467c40341e8132bae9b6b493a7ae33_tn',
-    'https://cf.shopee.vn/file/fb70d055c8d4b2604314d0ba36a9ba80_tn',
-    'https://cf.shopee.vn/file/vn-11134207-7r98o-lnqi3a9zrw5632_tn',
-    'https://cf.shopee.vn/file/vn-11134207-7r98o-lnqi3aa07ce294_tn',
-    'https://cf.shopee.vn/file/0831df249013d5ae50d7ed42996412c8_tn',
-    'https://cf.shopee.vn/file/be82e16ddc37dcf2657d02a30171a050_tn',
-    'https://cf.shopee.vn/file/2d7d1d30596c7d6527b403f9e3a40518_tn',
-    'https://cf.shopee.vn/file/38625d8696c075b0266676b87dc910dd_tn',
-    'https://cf.shopee.vn/file/2c467c40341e8132bae9b6b493a7ae33_tn',
-    'https://cf.shopee.vn/file/fb70d055c8d4b2604314d0ba36a9ba80_tn',
-    'https://cf.shopee.vn/file/vn-11134207-7r98o-lnqi3a9zrw5632_tn',
-    'https://cf.shopee.vn/file/vn-11134207-7r98o-lnqi3aa07ce294_tn',
-    'https://cf.shopee.vn/file/0831df249013d5ae50d7ed42996412c8_tn',
-    'https://cf.shopee.vn/file/be82e16ddc37dcf2657d02a30171a050_tn',
-    'https://cf.shopee.vn/file/2d7d1d30596c7d6527b403f9e3a40518_tn',
-    'https://cf.shopee.vn/file/38625d8696c075b0266676b87dc910dd_tn',
-    'https://cf.shopee.vn/file/2c467c40341e8132bae9b6b493a7ae33_tn',
-    'https://cf.shopee.vn/file/fb70d055c8d4b2604314d0ba36a9ba80_tn',
-    'https://cf.shopee.vn/file/fb70d055c8d4b2604314d0ba36a9ba80',
-];
+defineProps<{
+    images: string[];
+}>();
 </script>
 
 <style scoped>

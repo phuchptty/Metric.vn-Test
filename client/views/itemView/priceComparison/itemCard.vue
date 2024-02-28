@@ -1,5 +1,5 @@
 <template>
-    <div class="flex md:items-center p-2 lg:p-4 rounded-xl cardShadow">
+    <div class="flex md:items-center p-2 lg:p-4 rounded-xl cardShadow duration-100 ease-in">
         <div class="flex justify-start flex-auto">
             <div class="flex-shrink-0 cursor-pointer flex items-center">
                 <div class="relative">

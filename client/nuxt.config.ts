@@ -8,6 +8,11 @@ export default defineNuxtConfig({
             title: 'Metrics',
         },
     },
+    runtimeConfig: {
+        public: {
+            apiBaseUrl: '',
+        },
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         '@nuxtjs/eslint-module',
