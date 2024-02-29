@@ -14,7 +14,7 @@
 
         <PriceComparison />
 
-        <!--        <PriceHistory />-->
+        <PriceHistory :item-detail-data="itemDetailData" />
 
         <ItemDescription :description="itemDetailData.description" />
 

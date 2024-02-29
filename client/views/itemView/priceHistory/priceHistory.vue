@@ -6,7 +6,7 @@
     </div>
 
     <div class="flex flex-col lg:flex-row">
-        <LeftCol />
+        <LeftCol :item-detail-data="itemDetailData" />
         <RightCol />
     </div>
 </template>
@@ -14,6 +14,11 @@
 <script setup lang="ts">
 import LeftCol from '~/views/itemView/priceHistory/leftCol.vue';
 import RightCol from '~/views/itemView/priceHistory/rightCol.vue';
+import type { ItemDetail } from '~/types';
+
+defineProps<{
+    itemDetailData: ItemDetail;
+}>();
 </script>
 
 <style scoped></style>

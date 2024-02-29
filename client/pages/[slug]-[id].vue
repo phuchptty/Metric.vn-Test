@@ -34,6 +34,10 @@ if (!data.value || !data.value.data) {
 }
 
 const itemDetailData = data.value.data;
+
+useHead({
+    title: `Lịch sửa giá ${itemDetailData.name}`,
+});
 </script>
 
 <style scoped></style>
