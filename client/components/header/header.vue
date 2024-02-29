@@ -24,7 +24,7 @@
             </div>
 
             <div class="flex flex-shrink-0 my-2 mx-4 lg:mr-0">
-                <div class="flex flex-row items-center cursor-pointer">
+                <div class="flex flex-row items-center cursor-pointer" @click="toggleCategoryMenu">
                     <BarIcon />
                     <p class="ml-2 uppercase">Danh mục</p>
                 </div>
@@ -35,13 +35,46 @@
             </div>
         </div>
     </div>
+
+    <CategoryComponent v-if="isCategoryMenuOpen" :toggle="toggleCategoryMenu" :categories="categoriesData" />
 </template>
 
 <script setup lang="ts">
 import SearchIcon from '~/assets/icons/searchIcon.svg';
 import BarIcon from '~/assets/icons/menuBar.svg';
+import CategoryComponent from '~/components/header/category.vue';
 
 defineComponent({
     name: 'HeaderComponent',
 });
+
+const isCategoryMenuOpen = ref(false);
+
+const toggleCategoryMenu = () => {
+    isCategoryMenuOpen.value = !isCategoryMenuOpen.value;
+};
+
+watch(isCategoryMenuOpen, (value) => {
+    if (value) {
+        document.body.style.overflow = 'hidden';
+    } else {
+        document.body.style.overflow = 'auto';
+    }
+});
+
+onUnmounted(() => {
+    document.body.style.overflow = 'auto';
+});
+
+const categoriesData = ref([]);
+
+const { error, data } = await useCustomFetch(`/category/list`);
+
+if (error.value) {
+    console.error(error.value);
+}
+
+if (data.value) {
+    categoriesData.value = data.value.data;
+}
 </script>
