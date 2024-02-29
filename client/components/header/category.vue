@@ -7,6 +7,7 @@
                     v-for="category in categories"
                     :key="category.id"
                     :class="category.id === currentParentCategory.id ? 'active' : ''"
+                    @click="changeCurrentParentCategory(category)"
                 >
                     <div class="h-10 w-10 overflow-hidden rounded-full">
                         <img alt="" class="h-10 w-10" src="~/assets/images/shopee.jpg" />
@@ -59,6 +60,10 @@ const props = defineProps({
 });
 
 const currentParentCategory = ref(props.categories[0]);
+
+function changeCurrentParentCategory(category: CategoryData) {
+    currentParentCategory.value = category;
+}
 </script>
 
 <style scoped>
