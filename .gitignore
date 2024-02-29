@@ -1,0 +1,5 @@
+.vscode
+.idea
+.client.env
+.server.env
+.env

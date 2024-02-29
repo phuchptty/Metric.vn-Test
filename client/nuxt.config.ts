@@ -12,6 +12,7 @@ export default defineNuxtConfig({
         public: {
             apiBaseUrl: '',
         },
+        serverApiBaseUrl: '',
     },
     modules: [
         '@nuxtjs/tailwindcss',
@@ -27,5 +28,10 @@ export default defineNuxtConfig({
     css: ['@fortawesome/fontawesome-svg-core/styles.css', '@/assets/css/swiper.scss'],
     antd: {
         icons: false,
+    },
+    routeRules: {
+        '/*': {
+            prerender: false,
+        },
     },
 });
